@@ -169,13 +169,15 @@
             <h2 class="section-title">Please feel free to drop me a message below!</h2>
 
             <div class="contact__container">
-                <form action="" class="contact__form">
+                <form action="https://formspree.io/f/xeqvevno" method="POST" class="contact__form">
                     <div class="contact__inputs">
-                        <input type="text" placeholder="Name" class="contact__input">
-                        <input type="mail" placeholder="Email" class="contact__input">
+                        <input type="text" name="_gotcha" style="display:none" />
+                        <input type="hidden" name="_subject" value="New submission from portfolio!" />
+                        <input type="text" name="_name" placeholder="Name" class="contact__input">
+                        <input type="email" name="_replyto" placeholder="Email" class="contact__input">
                     </div>
 
-                    <textarea name="" id="" cols="0" rows="10" placeholder="Message" class="contact__input"></textarea>
+                    <textarea name="message" cols="0" rows="10" placeholder="Message" class="contact__input"></textarea>
 
                     <input type="submit" value="Send Message" class="button contact__button">
                 </form>
