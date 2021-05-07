@@ -488,7 +488,12 @@ img {
 
 /* Cursor */
 .txt-type > .txt {
-    border-right: 0.2rem solid #777;
+    border-right: 0.2rem solid rgb(243, 201, 124);
+}
+
+.txt-type > .txt-hidden {
+    border-right: none;
+    transition-duration: 0.4s;
 }
 
 /* Media Queries */
