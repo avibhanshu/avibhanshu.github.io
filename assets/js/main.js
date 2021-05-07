@@ -44,53 +44,29 @@ function scrollActive() {
 }
 
 
-// ES6 class
 class TypeWriter {
-    constructor(txtElement, words, wait = 3000) {
+    constructor(txtElement, words, wait) {
         this.txtElement = txtElement;
         this.words = words;
         this.txt = '';
-        this.wordIndex = 0;
-        this.wait = parseInt(wait, 10);
+        this.wait = wait;
         this.type();
-        this.isDeleting = false;
     }
 
     type() {
-        // Current index of word
-        const current = this.wordIndex % this.words.length;
-        // Get full text of current word
-        const fullTxt = this.words[current];
-        // Check if deleting
-        if (this.isDeleting) {
-            // Remove char
-            this.txt = fullTxt.substring(0, this.txt.length - 1);
-        } else {
-            // Add character
-            this.txt = fullTxt.substring(0, this.txt.length + 1);
-        }
+        const fullTxt = this.words;
+        this.txt = fullTxt.substring(0, this.txt.length + 1);
 
         // Insert txt into element
         this.txtElement.innerHTML = `<span class="txt">${this.txt}</span>`;
 
-        // Initial type speed
-        let typeSpeed = 300;
-        if (this.isDeleting) {
-            typeSpeed /= 2;
-        }
-
-        // If word is complete
-        if (!this.isDeleting && this.txt === fullTxt) {
-            // Make pause at end
-            typeSpeed = this.wait;
-            // Set delete to true
-            this.isDeleting = true;
-        } else if (this.isDeleting && this.txt === '') {
-            this.isDeleting = false;
-            // Move to next word
-            this.wordIndex++;
-            // Pause before start typing
-            typeSpeed = 500;
+        const typeSpeed = 150;
+    
+        if (this.txt === fullTxt) {
+            setTimeout(() => {
+                document.querySelector('.txt').className = "txt-hidden";
+            }, this.wait);
+            return;
         }
 
         setTimeout(() => this.type(), typeSpeed);
