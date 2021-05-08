@@ -60,7 +60,7 @@ class TypeWriter {
         // Insert txt into element
         this.txtElement.innerHTML = `<span class="txt">${this.txt}</span>`;
 
-        const typeSpeed = 150;
+        const typeSpeed = 165;
     
         if (this.txt === fullTxt) {
             setTimeout(() => {
