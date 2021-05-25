@@ -315,6 +315,10 @@ img {
     border: 2px solid var(--text-color);
 }
 
+.home__social-link:hover:nth-child(4) {
+    border: 2px solid var(--text-color);
+}
+
 .home__button {
     /* width: 100%; */
     width: 80%;
