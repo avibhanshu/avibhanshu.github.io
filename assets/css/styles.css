@@ -298,6 +298,11 @@ img {
     background-color: #d4840b;
 }
 
+.home__social-link:nth-child(4) {
+    color: #000;
+    background-color: var(--first-color-lighten);
+}
+
 .home__social-link:hover:nth-child(1) {
     border: 2px solid var(--text-color);
 }
